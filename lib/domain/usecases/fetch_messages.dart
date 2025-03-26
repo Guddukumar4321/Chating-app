@@ -2,9 +2,9 @@
 import '../../data/models/message_model.dart';
 import '../../data/repositories/chat_repository.dart';
 
-class FetchMessages {
+class FetchChatDetails {
   final ChatRepository repository;
-  FetchMessages(this.repository);
+  FetchChatDetails(this.repository);
 
   Future<List<MessageModel>> execute() => repository.fetchMessages();
 }

@@ -1,16 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import '../../data/models/chat_model.dart';
 import '../../data/models/message_model.dart';
-import '../value/user_data.dart';
 
 
 class ChatService {
-  Future<ChatModel> getChatDetails() async {
-    await Future.delayed(Duration(seconds: 1));
-    return ChatModel(name: "ChatBloc", description: "A fast and simple chat app");
-  }
 
   Future<List<MessageModel>> getMessages() async {
     await Future.delayed(Duration(seconds: 1));
