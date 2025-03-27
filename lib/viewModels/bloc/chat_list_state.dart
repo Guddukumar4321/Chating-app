@@ -1,5 +1,5 @@
 
-import '../../../data/models/message_model.dart';
+import '../../models/message_model.dart';
 
 abstract class ChatState {}
 

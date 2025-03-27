@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import '../../data/models/message_model.dart';
+
+import '../../models/message_model.dart';
 
 
 class ChatService {
+
 
   Future<List<MessageModel>> getMessages() async {
     await Future.delayed(Duration(seconds: 1));
@@ -21,7 +23,6 @@ class ChatService {
        // userChat =  usersData.map((e) => MessageModel.fromJson(e)).toList();
       } catch (e) {
         print("Error loading JSON: $e");
-        return [];
       }
 
      return userChat;

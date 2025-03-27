@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../widgets/message_list.dart';
-import '../bloc/chat_list_bloc.dart';
-import '../bloc/chat_list_event.dart';
-import '../bloc/chat_list_state.dart';
+import '../core/theme/app_colors.dart';
+import '../viewModels/bloc/chat_list_bloc.dart';
+import '../viewModels/bloc/chat_list_event.dart';
+import '../viewModels/bloc/chat_list_state.dart';
+import '../widgets/message_list.dart';
+
 
 class UserChatScreen extends StatelessWidget {
   const UserChatScreen({super.key});

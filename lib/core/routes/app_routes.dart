@@ -1,20 +1,20 @@
+import 'package:chatdemo/core/routes/routes_name.dart';
 import 'package:flutter/material.dart';
-import '../../presentation/usersList/screens/chat_list_screen.dart';
-import '../../presentation/usersList/screens/chat_screen.dart';
+import '../../views/chat_list_screen.dart';
+import '../../views/chat_screen.dart';
 
 class AppRoutes {
-  static const String chatList = '/';
-  static const String chatScreen = '/chatScreen';
+
 
   /// ✅ Define Named Routes
   static Map<String, WidgetBuilder> routes = {
-    chatList: (context) => UserChatScreen(),
+    RoutesName.chatList: (context) => UserChatScreen(),
   };
 
   /// ✅ Handle Dynamic Route with Arguments
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case chatScreen:
+      case RoutesName.chatScreen:
         final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
           builder: (context) => ChatScreen(user: args["user"]),

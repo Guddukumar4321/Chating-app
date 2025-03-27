@@ -1,9 +1,9 @@
-
-import 'package:chatdemo/presentation/usersList/bloc/chat_list_bloc.dart';
+import 'package:chatdemo/viewModels/bloc/chat_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/routes/app_routes.dart';
+import 'core/routes/routes_name.dart';
 import 'di/service_locator.dart';
 
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ChatBloc',
-        initialRoute: AppRoutes.chatList,
+        initialRoute: RoutesName.chatList,
         routes: AppRoutes.routes, // Use static routes
         onGenerateRoute: AppRoutes.generateRoute,
 

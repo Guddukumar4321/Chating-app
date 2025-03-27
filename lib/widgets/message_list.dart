@@ -1,9 +1,8 @@
 import 'package:chatdemo/core/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
-import '../../core/routes/app_routes.dart';
 import '../../core/theme/app_colors.dart';
-import '../../data/models/message_model.dart';
-import '../usersList/screens/chat_screen.dart';
+import '../core/routes/routes_name.dart';
+import '../models/message_model.dart';
 
 class MessageList extends StatelessWidget {
   final List<MessageModel> messages;
@@ -21,7 +20,7 @@ class MessageList extends StatelessWidget {
           onTap: (){
             Navigator.pushNamed(
               context,
-              AppRoutes.chatScreen,
+              RoutesName.chatScreen,
               arguments: {
                 "user": message, // Pass user object
               },

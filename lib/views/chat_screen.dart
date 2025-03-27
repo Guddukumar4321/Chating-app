@@ -1,10 +1,7 @@
 import 'package:chatdemo/core/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../data/models/message_model.dart';
-import '../bloc/chat_list_bloc.dart';
-import '../bloc/chat_list_event.dart';
+import '../core/theme/app_colors.dart';
+import '../models/message_model.dart';
 
 
 class ChatScreen extends StatelessWidget {
@@ -16,35 +13,32 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => BlocProvider.of<ChatBloc>(context)..add(FetchChatDetailsEvent()),
-      child: Scaffold(
-        backgroundColor: AppColors.background,
-        appBar: AppBar(
-          backgroundColor: AppColors.primary,
-          title: Row(
-            children: [
-              Container(
-                alignment: Alignment.center,
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: AppColors.background,
-                    borderRadius: BorderRadius.circular(20)
-                ),
-                child: Text((user.sender??"").profileText(), style: TextStyle(color: AppColors.black.withOpacity(0.6), fontWeight: FontWeight.w700, fontSize: 20),),
-              ),
-              SizedBox(width: 10),
-              Text(user.sender??""),
-            ],
-          ),
-        ),
-        body: Column(
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      appBar: AppBar(
+        backgroundColor: AppColors.primary,
+        title: Row(
           children: [
-            Expanded(child: buildMessageList()),
-            buildMessageInput(context),
+            Container(
+              alignment: Alignment.center,
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: AppColors.background,
+                  borderRadius: BorderRadius.circular(20)
+              ),
+              child: Text((user.sender??"").profileText(), style: TextStyle(color: AppColors.black.withOpacity(0.6), fontWeight: FontWeight.w700, fontSize: 20),),
+            ),
+            SizedBox(width: 10),
+            Text(user.sender??""),
           ],
         ),
+      ),
+      body: Column(
+        children: [
+          Expanded(child: buildMessageList()),
+          buildMessageInput(context),
+        ],
       ),
     );
   }
